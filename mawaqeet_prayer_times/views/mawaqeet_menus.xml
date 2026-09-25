@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_mawaqeet_dashboard" model="ir.actions.client">
+        <field name="name">Mawaqeet</field>
+        <field name="tag">mawaqeet.dashboard</field>
+    </record>
+    <record id="action_mawaqeet_quran" model="ir.actions.client">
+        <field name="name">Holy Quran</field>
+        <field name="tag">mawaqeet.quran</field>
+    </record>
+    <record id="action_mawaqeet_adhkar" model="ir.actions.client">
+        <field name="name">Adhkar</field>
+        <field name="tag">mawaqeet.adhkar</field>
+    </record>
+    <record id="action_mawaqeet_hadith" model="ir.actions.client">
+        <field name="name">Hadith</field>
+        <field name="tag">mawaqeet.hadith</field>
+    </record>
+
+    <menuitem id="menu_mawaqeet_root" name="Mawaqeet" sequence="95"
+              web_icon="mawaqeet_prayer_times,static/description/icon.png"
+              action="action_mawaqeet_dashboard"/>
+    <menuitem id="menu_mawaqeet_dashboard" name="Prayer Times" parent="menu_mawaqeet_root"
+              action="action_mawaqeet_dashboard" sequence="1"/>
+    <menuitem id="menu_mawaqeet_quran" name="Holy Quran" parent="menu_mawaqeet_root"
+              action="action_mawaqeet_quran" sequence="2"/>
+    <menuitem id="menu_mawaqeet_hadith" name="Hadith" parent="menu_mawaqeet_root"
+              action="action_mawaqeet_hadith" sequence="3"/>
+    <menuitem id="menu_mawaqeet_adhkar" name="Adhkar" parent="menu_mawaqeet_root"
+              action="action_mawaqeet_adhkar" sequence="4"/>
+    <menuitem id="menu_mawaqeet_bookmarks" name="My Bookmarks" parent="menu_mawaqeet_root"
+              action="action_mawaqeet_bookmarks" sequence="5"/>
+    <menuitem id="menu_mawaqeet_settings" name="Settings" parent="menu_mawaqeet_root"
+              action="action_mawaqeet_settings" sequence="9" groups="base.group_system"/>
+</odoo>

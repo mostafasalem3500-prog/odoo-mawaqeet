@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="mawaqeet_prayer_times.Quran">
+        <div class="o_action o_mw_app o_mw_reader" dir="rtl">
+            <!-- SIDEBAR -->
+            <aside t-attf-class="o_mw_side {{ ui.sidebar ? 'o_mw_side_open' : '' }}">
+                <div class="o_mw_side_head">
+                    <div class="o_mw_side_title"><i class="fa fa-book o_mw_i2"/>المصحف الشريف</div>
+                    <div class="o_mw_tabs">
+                        <button t-att-class="ui.tab === 'suras' ? 'active' : ''" t-on-click="() => this.ui.tab = 'suras'">السور</button>
+                        <button t-att-class="ui.tab === 'juz' ? 'active' : ''" t-on-click="() => this.ui.tab = 'juz'">الأجزاء</button>
+                        <button t-att-class="ui.tab === 'marks' ? 'active' : ''" t-on-click="() => this.ui.tab = 'marks'">مفضلتي</button>
+                    </div>
+                    <input t-if="ui.tab === 'suras'" class="form-control form-control-sm mt-2" placeholder="ابحث باسم السورة أو رقمها" t-model="ui.filter"/>
+                </div>
+                <div class="o_mw_side_list">
+                    <t t-if="ui.tab === 'suras'">
+                        <button t-foreach="filteredSuras" t-as="s" t-key="s.n"
+                                t-attf-class="o_mw_sura_item {{ ui.sura and ui.sura.n === s.n ? 'active' : '' }}"
+                                t-on-click="() => this.openSura(s.n)">
+                            <span class="o_mw_sura_no" t-esc="arNum(s.n)"/>
+                            <span class="flex-fill o_mw_tr">
+                                <span class="o_mw_sura_name" t-esc="s.ar"/>
+                                <span class="o_mw_sura_meta"><t t-esc="s.t"/> • <t t-esc="arNum(s.c)"/> آية</span>
+                            </span>
+                        </button>
+                    </t>
+                    <t t-elif="ui.tab === 'juz'">
+                        <button t-foreach="ui.juz" t-as="j" t-key="j_index" class="o_mw_sura_item" t-on-click="() => this.openJuz(j_index + 1)">
+                            <span class="o_mw_sura_no" t-esc="arNum(j_index + 1)"/>
+                            <span class="flex-fill o_mw_tr">
+                                <span class="o_mw_sura_name">الجزء <t t-esc="arNum(j_index + 1)"/></span>
+                                <span class="o_mw_sura_meta">يبدأ من <t t-esc="ui.index[j[0] - 1].ar"/> <t t-esc="arNum(j[1])"/> • صفحة <t t-esc="arNum(j[2])"/></span>
+                            </span>
+                        </button>
+                    </t>
+                    <t t-else="">
+                        <div t-if="!ayahBookmarks.length" class="text-muted small p-3">لا توجد آيات محفوظة بعد. اضغط على أي آية ثم «حفظ».</div>
+                        <button t-foreach="ayahBookmarks" t-as="b" t-key="b.id" class="o_mw_sura_item" t-on-click="() => this.openSura(b.sura, b.ayah, true)">
+                            <i class="fa fa-bookmark text-warning o_mw_i2"/>
+                            <span class="flex-fill o_mw_tr">
+                                <span class="o_mw_sura_name" t-esc="b.name"/>
+                                <span class="o_mw_sura_meta" t-if="b.note" t-esc="b.note"/>
+                            </span>
+                        </button>
+                    </t>
+                </div>
+            </aside>
+
+            <!-- MAIN -->
+            <main class="o_mw_main">
+                <div class="o_mw_toolbar">
+                    <button class="btn btn-sm btn-light d-lg-none" t-on-click="() => this.ui.sidebar = !this.ui.sidebar"><i class="fa fa-list"/></button>
+                    <div class="o_mw_search">
+                        <i class="fa fa-search"/>
+                        <input class="form-control form-control-sm" placeholder="ابحث في القرآن الكريم (اكتب كلمة ثم Enter)" t-model="ui.query" t-on-keyup="search"/>
+                        <button t-if="ui.results" class="btn btn-sm btn-link" t-on-click="clearSearch"><i class="fa fa-times"/></button>
+                    </div>
+                    <div class="o_mw_page_jump" title="الانتقال إلى صفحة في مصحف المدينة النبوية">
+                        <input class="form-control form-control-sm" inputmode="numeric" placeholder="صفحة ١–٦٠٤" t-model="ui.page" t-on-keyup="goPage"/>
+                        <button class="btn btn-sm btn-light" t-on-click="() => this.goPage()"><i class="fa fa-arrow-left"/></button>
+                    </div>
+                    <div class="btn-group btn-group-sm">
+                        <button t-attf-class="btn {{ ui.mode === 'mushaf' ? 'btn-primary' : 'btn-light' }}" t-on-click="() => this.setMode('mushaf')" title="عرض متصل كالمصحف">مصحف</button>
+                        <button t-attf-class="btn {{ ui.mode === 'tafsir' ? 'btn-primary' : 'btn-light' }}" t-on-click="() => this.setMode('tafsir')" title="آية مع تفسيرها">آية وتفسير</button>
+                    </div>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-light" t-on-click="() => this.font(-2)" title="تصغير الخط">ا-</button>
+                        <button class="btn btn-light" t-on-click="() => this.font(2)" title="تكبير الخط">ا+</button>
+                    </div>
+                </div>
+
+                <div class="o_mw_reader_body" t-ref="reader">
+                    <!-- search results -->
+                    <t t-if="ui.results">
+                        <div class="o_mw_results_head">
+                            نتائج البحث عن «<t t-esc="ui.results.q"/>»: <b t-esc="arNum(ui.results.total)"/> آية
+                            <span t-if="ui.results.total > ui.results.items.length" class="text-muted">(يُعرض أول ١٥٠)</span>
+                        </div>
+                        <div t-if="!ui.results.total" class="text-muted p-4 text-center">لا توجد نتائج. جرّب كلمة أخرى أو جزءًا من الكلمة.</div>
+                        <button t-foreach="ui.results.items" t-as="r" t-key="r.key" class="o_mw_result" t-on-click="() => this.openResult(r)">
+                            <span class="o_mw_result_ref">سورة <t t-esc="r.name"/> • <t t-esc="arNum(r.a)"/></span>
+                            <span class="o_mw_result_text" t-esc="r.text"/>
+                        </button>
+                    </t>
+
+                    <t t-elif="ui.sura and !ui.loading">
+                        <div class="o_mw_sura_header">
+                            <div class="o_mw_sura_frame">
+                                <span class="o_mw_sura_side" t-esc="suraMeta.t"/>
+                                <span class="o_mw_sura_title">سورة <t t-esc="ui.sura.ar"/></span>
+                                <span class="o_mw_sura_side"><t t-esc="arNum(suraMeta.c)"/> آية</span>
+                            </div>
+                            <div class="o_mw_basmala o_mw_quran_text" t-if="showBasmala" t-esc="basmala"/>
+                        </div>
+
+                        <!-- MUSHAF MODE -->
+                        <div t-if="ui.mode === 'mushaf'" class="o_mw_mushaf o_mw_quran_text" t-attf-style="font-size: {{ ui.fontSize }}px">
+                            <t t-foreach="ui.sura.ayat" t-as="a" t-key="a.a">
+                                <span t-attf-class="o_mw_ayah {{ ui.activeAyah === a.a ? 'active' : '' }}" t-att-data-ayah="a.a" t-on-click="() => this.selectAyah(a)" t-esc="a.t"/>
+                                <t t-esc="' '"/>
+                            </t>
+                        </div>
+
+                        <!-- AYAH + TAFSIR MODE -->
+                        <div t-else="" class="o_mw_ayah_list">
+                            <div t-foreach="ui.sura.ayat" t-as="a" t-key="a.a" t-attf-class="o_mw_ayah_card {{ ui.activeAyah === a.a ? 'active' : '' }}" t-att-data-ayah="a.a">
+                                <div class="o_mw_ayah_bar">
+                                    <span class="o_mw_ayah_ref"><t t-esc="ui.sura.ar"/> • <t t-esc="arNum(a.a)"/> <span class="text-muted">| الجزء <t t-esc="arNum(a.j)"/> • ص <t t-esc="arNum(a.p)"/></span></span>
+                                    <span class="o_mw_ayah_tools">
+                                        <button class="btn btn-sm btn-link" t-on-click="() => this.toggleTafsir(a)" title="التفسير الميسر"><i class="fa fa-lightbulb-o"/></button>
+                                        <button class="btn btn-sm btn-link" t-on-click="() => this.copyAyah(a)" title="نسخ"><i class="fa fa-copy"/></button>
+                                        <button class="btn btn-sm btn-link" t-on-click="() => this.toggleBookmark(a)" title="حفظ">
+                                            <i t-attf-class="fa {{ isBookmarked(a) ? 'fa-bookmark text-warning' : 'fa-bookmark-o' }}"/>
+                                        </button>
+                                    </span>
+                                </div>
+                                <p class="o_mw_quran_text mb-2" t-attf-style="font-size: {{ ui.fontSize }}px" t-esc="a.t"/>
+                                <div class="o_mw_tafsir" t-if="ui.openTafsir[a.a]">
+                                    <div class="o_mw_tafsir_label">التفسير الميسر</div>
+                                    <t t-esc="a.m"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="o_mw_sura_nav">
+                            <button class="btn btn-light" t-if="ui.sura.n > 1" t-on-click="() => this.openSura(ui.sura.n - 1)"><i class="fa fa-chevron-right o_mw_i1"/>سورة <t t-esc="ui.index[ui.sura.n - 2].ar"/></button>
+                            <span/>
+                            <button class="btn btn-light" t-if="ui.sura.n &lt; 114" t-on-click="() => this.openSura(ui.sura.n + 1)">سورة <t t-esc="ui.index[ui.sura.n].ar"/><i class="fa fa-chevron-left o_mw_ir1"/></button>
+                        </div>
+                        <div class="o_mw_source_note">
+                            النص القرآني: مجمع الملك فهد لطباعة المصحف الشريف — رواية حفص عن عاصم (الإصدار ١٨) • التفسير: التفسير الميسر، مجمع الملك فهد.
+                        </div>
+                    </t>
+                    <div t-else="" class="o_mw_loading py-5"><i class="fa fa-circle-o-notch fa-spin fa-2x"/></div>
+                </div>
+
+                <!-- ACTIVE AYAH PANEL (mushaf mode) -->
+                <div class="o_mw_ayah_panel" t-if="ui.mode === 'mushaf' and activeAyahObj and !ui.results">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <b>سورة <t t-esc="ui.sura.ar"/> — الآية <t t-esc="arNum(activeAyahObj.a)"/></b>
+                        <span>
+                            <button class="btn btn-sm btn-light" t-on-click="() => this.copyAyah(activeAyahObj)"><i class="fa fa-copy o_mw_i1"/>نسخ</button>
+                            <button class="btn btn-sm btn-light" t-on-click="() => this.toggleBookmark(activeAyahObj)">
+                                <i t-attf-class="fa o_mw_i1 {{ isBookmarked(activeAyahObj) ? 'fa-bookmark text-warning' : 'fa-bookmark-o' }}"/>حفظ
+                            </button>
+                            <button class="btn btn-sm btn-light" t-on-click="() => this.ui.activeAyah = null"><i class="fa fa-times"/></button>
+                        </span>
+                    </div>
+                    <div class="o_mw_tafsir_label">التفسير الميسر</div>
+                    <div class="o_mw_panel_text" t-esc="activeAyahObj.m"/>
+                </div>
+            </main>
+        </div>
+    </t>
+</templates>

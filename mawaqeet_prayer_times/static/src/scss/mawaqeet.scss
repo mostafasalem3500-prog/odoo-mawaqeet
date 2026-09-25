@@ -1,0 +1,1177 @@
+// Mawaqeet — Prayer Times, Holy Quran & Hadith for Odoo
+$mw-green-900: #072a1f;
+$mw-green-800: #0b3d2c;
+$mw-green-700: #125038;
+$mw-green-600: #1a6b4b;
+$mw-gold: #c9a227;
+$mw-gold-light: #e8cf7a;
+$mw-card: $o-view-background-color;
+$mw-border: $border-color;
+
+@font-face {
+    font-family: "MawaqeetHafs";
+    src: url("/mawaqeet_prayer_times/static/fonts/hafs.18.woff2") format("woff2");
+    font-display: swap;
+}
+
+/*rtl:begin:ignore*/
+// The Mawaqeet UI is always rendered right-to-left (dir="rtl"), whatever the
+// Odoo interface language, so physical directions must never be flipped.
+.o_mw_i1 {
+    margin-left: 0.3rem;
+}
+.o_mw_i2 {
+    margin-left: 0.55rem;
+}
+.o_mw_ir1 {
+    margin-right: 0.3rem;
+}
+.o_mw_tr {
+    text-align: right;
+}
+
+.o_mw_app {
+    --mw-gold: #{$mw-gold};
+    --mw-green: #{$mw-green-700};
+    font-family: "Tajawal", "Cairo", "Segoe UI", "Noto Naskh Arabic", "Noto Sans Arabic", Tahoma, sans-serif;
+    height: 100%;
+    overflow: auto;
+    background: $o-webclient-background-color;
+    text-align: right;
+
+    .o_mw_quran_text {
+        font-family: "MawaqeetHafs", "KFGQPC Uthmanic Script HAFS", "Amiri Quran", "Traditional Arabic", serif;
+        line-height: 2.1;
+        font-feature-settings: "liga", "calt";
+    }
+    .o_mw_loading {
+        text-align: center;
+        color: $mw-gold;
+        padding: 2rem 0;
+    }
+}
+
+// ---------------- Dashboard ----------------
+.o_mw_dashboard {
+    display: block !important;
+    padding: 16px;
+    @media (min-width: 992px) {
+        padding: 24px 32px;
+    }
+
+    .o_mw_hero {
+        position: relative;
+        overflow: hidden;
+        border-radius: 22px;
+        color: #fff;
+        background: radial-gradient(1200px 400px at 85% -10%, rgba($mw-gold, 0.28), transparent 60%),
+            linear-gradient(135deg, $mw-green-900 0%, $mw-green-800 45%, $mw-green-600 100%);
+        box-shadow: 0 18px 40px -18px rgba($mw-green-900, 0.7);
+    }
+    .o_mw_pattern {
+        position: absolute;
+        inset: 0;
+        opacity: 0.09;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23e8cf7a' stroke-width='1.2'%3E%3Cpath d='M40 4 L49 22 L68 12 L58 31 L76 40 L58 49 L68 68 L49 58 L40 76 L31 58 L12 68 L22 49 L4 40 L22 31 L12 12 L31 22 Z'/%3E%3Ccircle cx='40' cy='40' r='10'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 80px 80px;
+        animation: o_mw_drift 60s linear infinite;
+        pointer-events: none;
+    }
+    .o_mw_hero_inner {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 28px;
+        @media (min-width: 992px) {
+            padding: 36px 44px;
+        }
+    }
+    .o_mw_hero_text {
+        flex: 1 1 360px;
+        min-width: 0;
+    }
+    .o_mw_eyebrow {
+        color: $mw-gold-light;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+    }
+    .o_mw_date {
+        color: #fff;
+        font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+        font-weight: 800;
+        margin: 6px 0 2px;
+    }
+    .o_mw_sub {
+        opacity: 0.8;
+        font-size: 1.05rem;
+    }
+    .o_mw_badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+    }
+    .o_mw_badge {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        padding: 4px 12px;
+        font-size: 0.82rem;
+        backdrop-filter: blur(4px);
+    }
+    .o_mw_badge_gold {
+        background: rgba($mw-gold, 0.22);
+        border-color: rgba($mw-gold, 0.55);
+        color: $mw-gold-light;
+    }
+    .o_mw_hero_actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+    }
+    .o_mw_btn_gold {
+        background: linear-gradient(135deg, $mw-gold-light, $mw-gold);
+        color: $mw-green-900;
+        font-weight: 700;
+        border: 0;
+        border-radius: 12px;
+        padding: 8px 16px;
+        &:hover {
+            filter: brightness(1.06);
+            color: $mw-green-900;
+        }
+    }
+    .o_mw_btn_ghost {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        padding: 8px 16px;
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+    }
+    .o_mw_ring_wrap {
+        position: relative;
+        width: 220px;
+        height: 220px;
+        flex: 0 0 auto;
+        margin-inline: auto;
+    }
+    .o_mw_ring {
+        width: 100%;
+        height: 100%;
+    }
+    .o_mw_ring_bg {
+        fill: rgba(255, 255, 255, 0.05);
+        stroke: rgba(255, 255, 255, 0.12);
+        stroke-width: 10;
+    }
+    .o_mw_ring_fg {
+        fill: none;
+        stroke: $mw-gold;
+        stroke-width: 10;
+        stroke-linecap: round;
+        transition: stroke-dasharray 1s linear;
+        filter: drop-shadow(0 0 6px rgba($mw-gold, 0.6));
+    }
+    .o_mw_ring_label {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .o_mw_ring_small {
+        font-size: 0.85rem;
+        opacity: 0.8;
+    }
+    .o_mw_ring_name {
+        font-size: 1.9rem;
+        font-weight: 800;
+        color: $mw-gold-light;
+        line-height: 1.2;
+    }
+    .o_mw_ring_count {
+        font-size: 1.7rem;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        direction: ltr;
+        letter-spacing: 0.04em;
+    }
+
+    // prayer cards
+    .o_mw_prayers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+        margin: 18px 0;
+    }
+    .o_mw_prayer {
+        position: relative;
+        background: $mw-card;
+        border: 1px solid $mw-border;
+        border-radius: 16px;
+        padding: 16px 14px;
+        text-align: center;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px -14px rgba(0, 0, 0, 0.35);
+        }
+    }
+    .o_mw_prayer_icon {
+        font-size: 1.3rem;
+        color: $mw-gold;
+    }
+    .o_mw_prayer_name {
+        font-weight: 700;
+        margin-top: 6px;
+        font-size: 1.05rem;
+    }
+    .o_mw_prayer_time {
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: $mw-green-600;
+        margin-top: 2px;
+    }
+    .o_mw_prayer_passed {
+        opacity: 0.62;
+    }
+    .o_mw_prayer_aux .o_mw_prayer_time {
+        color: inherit;
+        font-weight: 600;
+    }
+    .o_mw_prayer_next {
+        opacity: 1;
+        background: linear-gradient(160deg, $mw-green-800, $mw-green-600);
+        border-color: $mw-gold;
+        color: #fff;
+        box-shadow: 0 14px 30px -16px rgba($mw-green-900, 0.9), 0 0 0 2px rgba($mw-gold, 0.35);
+        .o_mw_prayer_time {
+            color: $mw-gold-light;
+        }
+    }
+    .o_mw_prayer_tag {
+        position: absolute;
+        top: -10px;
+        inset-inline-start: 50%;
+        transform: translateX(50%);
+        background: $mw-gold;
+        color: $mw-green-900;
+        font-size: 0.72rem;
+        font-weight: 800;
+        border-radius: 999px;
+        padding: 2px 10px;
+        animation: o_mw_pulse 2s ease-in-out infinite;
+    }
+
+    .o_mw_grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        @media (min-width: 1200px) {
+            grid-template-columns: 1.3fr 0.9fr 1.3fr;
+        }
+    }
+
+    // Qibla
+    .o_mw_compass {
+        width: 210px;
+        height: 210px;
+        margin: 6px auto 0;
+        border-radius: 50%;
+        padding: 10px;
+        background: conic-gradient(from 0deg, rgba($mw-gold, 0.25), rgba($mw-green-600, 0.25), rgba($mw-gold, 0.25));
+        transition: box-shadow 0.4s;
+    }
+    .o_mw_compass_ok {
+        box-shadow: 0 0 0 4px rgba(#27ae60, 0.6), 0 0 28px rgba(#27ae60, 0.55);
+    }
+    .o_mw_dial {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: radial-gradient(circle at 50% 40%, $mw-green-700, $mw-green-900);
+        border: 3px solid $mw-gold;
+        transition: transform 0.3s ease-out;
+        color: $mw-gold-light;
+        font-weight: 800;
+        > span {
+            position: absolute;
+            font-size: 0.9rem;
+        }
+        .o_mw_n {
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff8a80;
+        }
+        .o_mw_s {
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .o_mw_e {
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .o_mw_w {
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .o_mw_needle {
+        position: absolute;
+        inset: 0;
+        transition: transform 0.6s ease-out;
+    }
+    .o_mw_needle_bar {
+        position: absolute;
+        left: 50%;
+        top: 34px;
+        bottom: 50%;
+        width: 4px;
+        margin-left: -2px;
+        border-radius: 4px;
+        background: linear-gradient(to top, rgba($mw-gold, 0.2), $mw-gold);
+    }
+    .o_mw_needle_kaaba {
+        position: absolute;
+        left: 50%;
+        top: 4px;
+        width: 34px;
+        height: 34px;
+        margin-left: -17px;
+        filter: drop-shadow(0 0 6px rgba($mw-gold, 0.8));
+    }
+    .o_mw_kaaba {
+        width: 100%;
+        height: 100%;
+    }
+    .o_mw_hub {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 14px;
+        height: 14px;
+        margin: -7px 0 0 -7px;
+        border-radius: 50%;
+        background: $mw-gold;
+        box-shadow: 0 0 0 3px $mw-green-900;
+    }
+
+    .o_mw_ayah_big {
+        font-size: 30px;
+        text-align: center;
+        margin: 8px 0 4px;
+    }
+    .o_mw_ref {
+        text-align: center;
+        color: $mw-gold;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .o_mw_hadith_text {
+        font-size: 1.12rem;
+        line-height: 2;
+        white-space: pre-line;
+        max-height: 330px;
+        overflow: auto;
+    }
+
+    .o_mw_month {
+        margin-top: 16px;
+    }
+    .o_mw_table {
+        text-align: center;
+        th {
+            background: $mw-green-800 !important;
+            color: #fff !important;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        td {
+            vertical-align: middle;
+        }
+        .o_mw_row_friday td {
+            background: rgba($mw-gold, 0.08);
+        }
+        .o_mw_row_today td {
+            background: rgba($mw-green-600, 0.18) !important;
+            font-weight: 800;
+        }
+    }
+    .o_mw_footer {
+        font-size: 0.78rem;
+        opacity: 0.7;
+        text-align: center;
+        margin: 20px auto 6px;
+        max-width: 900px;
+        line-height: 1.9;
+    }
+}
+
+// shared cards
+.o_mw_card {
+    background: $mw-card;
+    border: 1px solid $mw-border;
+    border-radius: 18px;
+    padding: 18px 20px;
+    box-shadow: 0 8px 24px -20px rgba(0, 0, 0, 0.4);
+    min-width: 0;
+}
+.o_mw_card_head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 800;
+        margin: 0;
+        i {
+            color: $mw-gold;
+        }
+    }
+}
+.o_mw_source {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+.o_mw_card_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+.o_mw_tafsir {
+    background: rgba($mw-gold, 0.08);
+    border-inline-start: 4px solid $mw-gold;
+    border-radius: 10px;
+    padding: 10px 14px;
+    line-height: 2;
+    font-size: 1rem;
+    margin-top: 6px;
+}
+.o_mw_tafsir_label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: $mw-gold;
+    margin-bottom: 2px;
+}
+
+// ---------------- Reader (Quran + Hadith) ----------------
+.o_mw_reader {
+    display: flex;
+    flex-direction: row !important;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .o_mw_side {
+        width: 300px;
+        flex: 0 0 300px;
+        display: flex;
+        flex-direction: column;
+        background: $mw-card;
+        border-inline-end: 1px solid $mw-border;
+        min-height: 0;
+        @media (max-width: 991.98px) {
+            position: absolute;
+            inset-block: 0;
+            inset-inline-start: 0;
+            z-index: 20;
+            transform: translateX(110%);
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+            &.o_mw_side_open {
+                transform: none;
+            }
+        }
+    }
+    .o_mw_side_head {
+        padding: 14px;
+        background: linear-gradient(135deg, $mw-green-900, $mw-green-700);
+        color: #fff;
+    }
+    .o_mw_side_title {
+        font-weight: 800;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        i {
+            color: $mw-gold;
+        }
+    }
+    .o_mw_tabs {
+        display: flex;
+        gap: 4px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 3px;
+        border-radius: 10px;
+        button {
+            flex: 1;
+            border: 0;
+            background: transparent;
+            color: #fff;
+            border-radius: 8px;
+            padding: 5px 0;
+            font-size: 0.85rem;
+            &.active {
+                background: $mw-gold;
+                color: $mw-green-900;
+                font-weight: 800;
+            }
+        }
+    }
+    .o_mw_books {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .o_mw_book {
+        text-align: right;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        border-radius: 10px;
+        padding: 8px 10px;
+        &.active {
+            border-color: $mw-gold;
+            background: rgba($mw-gold, 0.2);
+        }
+    }
+    .o_mw_book_title {
+        display: block;
+        font-weight: 800;
+    }
+    .o_mw_book_desc {
+        display: block;
+        font-size: 0.75rem;
+        opacity: 0.8;
+    }
+    .o_mw_side_list {
+        flex: 1;
+        overflow: auto;
+        padding: 6px;
+    }
+    .o_mw_side_sep {
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: $mw-gold;
+        padding: 12px 10px 4px;
+    }
+    .o_mw_sura_item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        border: 0;
+        background: transparent;
+        border-radius: 10px;
+        padding: 7px 8px;
+        text-align: right;
+        color: inherit;
+        &:hover {
+            background: rgba($mw-green-600, 0.08);
+        }
+        &.active {
+            background: rgba($mw-green-600, 0.16);
+            box-shadow: inset -3px 0 0 $mw-gold;
+        }
+    }
+    .o_mw_sura_no {
+        flex: 0 0 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: 800;
+        color: $mw-green-700;
+        background: rgba($mw-gold, 0.16);
+        clip-path: polygon(50% 0, 64% 14%, 85% 15%, 86% 36%, 100% 50%, 86% 64%, 85% 85%, 64% 86%, 50% 100%, 36% 86%, 15% 85%, 14% 64%, 0 50%, 14% 36%, 15% 15%, 36% 14%);
+    }
+    .o_mw_sura_name {
+        display: block;
+        font-weight: 700;
+    }
+    .o_mw_sura_meta {
+        display: block;
+        font-size: 0.72rem;
+        opacity: 0.65;
+    }
+
+    .o_mw_main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        position: relative;
+    }
+    .o_mw_toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-bottom: 1px solid $mw-border;
+        background: $mw-card;
+    }
+    .o_mw_search {
+        flex: 1 1 240px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        > i {
+            position: absolute;
+            inset-inline-start: 10px;
+            opacity: 0.5;
+        }
+        input {
+            padding-inline-start: 30px;
+            border-radius: 10px;
+        }
+    }
+    .o_mw_reader_body {
+        flex: 1;
+        overflow: auto;
+        padding: 18px 16px 120px;
+        @media (min-width: 992px) {
+            padding: 24px 48px 140px;
+        }
+    }
+
+    // Quran
+    .o_mw_sura_header {
+        max-width: 900px;
+        margin: 0 auto 12px;
+        text-align: center;
+    }
+    .o_mw_sura_frame {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 2px solid $mw-gold;
+        border-radius: 14px;
+        padding: 10px 18px;
+        background: linear-gradient(135deg, rgba($mw-green-700, 0.95), rgba($mw-green-900, 0.95));
+        color: #fff;
+        box-shadow: inset 0 0 0 4px rgba($mw-gold, 0.25);
+    }
+    .o_mw_sura_title {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: $mw-gold-light;
+    }
+    .o_mw_sura_side {
+        font-size: 0.82rem;
+        opacity: 0.85;
+        min-width: 70px;
+    }
+    .o_mw_basmala {
+        font-size: 30px;
+        margin-top: 12px;
+    }
+    .o_mw_mushaf {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: justify;
+        text-align-last: center;
+        line-height: 2.3;
+        background: $mw-card;
+        border: 1px solid $mw-border;
+        border-radius: 18px;
+        padding: 18px 22px;
+        box-shadow: inset 0 0 0 6px rgba($mw-gold, 0.08);
+    }
+    .o_mw_ayah {
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background 0.2s;
+        &:hover {
+            background: rgba($mw-gold, 0.12);
+        }
+        &.active {
+            background: rgba($mw-gold, 0.28);
+        }
+    }
+    .o_mw_ayah_list {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .o_mw_ayah_card,
+    .o_mw_hadith {
+        max-width: 900px;
+        margin: 0 auto 12px;
+        background: $mw-card;
+        border: 1px solid $mw-border;
+        border-radius: 16px;
+        padding: 12px 18px;
+        transition: box-shadow 0.3s, border-color 0.3s;
+        &.active {
+            border-color: $mw-gold;
+            box-shadow: 0 0 0 3px rgba($mw-gold, 0.25);
+        }
+    }
+    .o_mw_ayah_bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        border-bottom: 1px dashed $mw-border;
+        margin-bottom: 6px;
+        padding-bottom: 2px;
+        .btn-link {
+            color: $mw-green-600;
+        }
+    }
+    .o_mw_ayah_ref {
+        font-weight: 700;
+    }
+    .o_mw_hadith_no {
+        display: inline-flex;
+        min-width: 32px;
+        height: 32px;
+        padding: 0 8px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        font-weight: 800;
+        background: linear-gradient(135deg, $mw-green-700, $mw-green-900);
+        color: $mw-gold-light;
+    }
+    .o_mw_hadith_text {
+        font-size: 1.15rem;
+        line-height: 2.05;
+        white-space: pre-line;
+        margin: 4px 0 2px;
+    }
+    .o_mw_sura_nav {
+        max-width: 900px;
+        margin: 18px auto 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .o_mw_source_note {
+        max-width: 900px;
+        margin: 18px auto 0;
+        text-align: center;
+        font-size: 0.75rem;
+        opacity: 0.65;
+    }
+    .o_mw_results_head {
+        max-width: 900px;
+        margin: 0 auto 10px;
+    }
+    .o_mw_result {
+        display: block;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto 8px;
+        text-align: right;
+        background: $mw-card;
+        border: 1px solid $mw-border;
+        border-radius: 12px;
+        padding: 10px 14px;
+        color: inherit;
+        &:hover {
+            border-color: $mw-gold;
+        }
+    }
+    .o_mw_result_ref {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: $mw-gold;
+    }
+    .o_mw_result_text {
+        font-size: 1.1rem;
+        line-height: 1.9;
+    }
+    .o_mw_ayah_panel {
+        position: absolute;
+        inset-inline: 16px;
+        bottom: 16px;
+        max-width: 900px;
+        margin: 0 auto;
+        max-height: 40%;
+        overflow: auto;
+        background: $mw-card;
+        border: 1px solid $mw-gold;
+        border-radius: 16px;
+        padding: 12px 16px;
+        box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.5);
+        animation: o_mw_up 0.25s ease-out;
+        z-index: 5;
+    }
+    .o_mw_panel_text {
+        line-height: 2;
+    }
+    .o_mw_book_header {
+        max-width: 900px;
+        margin: 0 auto 14px;
+        text-align: center;
+        padding: 16px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, $mw-green-900, $mw-green-700);
+        color: #fff;
+        border: 2px solid $mw-gold;
+    }
+    .o_mw_book_name {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: $mw-gold-light;
+    }
+    .o_mw_book_author {
+        font-size: 0.85rem;
+        opacity: 0.85;
+    }
+    .o_mw_chapter_name {
+        margin-top: 6px;
+        font-weight: 700;
+    }
+}
+
+// ---------------- Systray ----------------
+.o_mw_systray_btn,
+.o_mawaqeet_systray_btn {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    padding: 0 8px;
+    height: 100%;
+    font-size: 0.85rem;
+    .fa {
+        color: $mw-gold;
+    }
+}
+.o_mawaqeet_count {
+    font-variant-numeric: tabular-nums;
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+.o_mawaqeet_pop {
+    width: 270px;
+    font-family: "Tajawal", "Cairo", "Segoe UI", Tahoma, sans-serif;
+    text-align: right;
+}
+.o_mawaqeet_pop_head {
+    background: linear-gradient(135deg, $mw-green-900, $mw-green-600);
+    color: #fff;
+    padding: 12px 14px;
+    border-radius: 6px 6px 0 0;
+}
+.o_mawaqeet_pop_next {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+    color: $mw-gold-light;
+}
+.o_mawaqeet_is_next {
+    background: rgba($mw-gold, 0.18);
+    font-weight: 800;
+}
+
+@keyframes o_mw_pulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba($mw-gold, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba($mw-gold, 0);
+    }
+}
+@keyframes o_mw_drift {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 800px 400px;
+    }
+}
+@keyframes o_mw_up {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .o_mw_pattern,
+    .o_mw_prayer_tag {
+        animation: none !important;
+    }
+}
+
+// ---------------- Print (monthly timetable) ----------------
+@media print {
+    body:has(.o_mw_dashboard) {
+        .o_main_navbar,
+        .o_control_panel,
+        .o_mw_hero,
+        .o_mw_prayers,
+        .o_mw_grid,
+        .o_mw_footer,
+        .o_mw_card_head {
+            display: none !important;
+        }
+        .o_action_manager,
+        .o_mw_app {
+            overflow: visible !important;
+            height: auto !important;
+        }
+        .o_mw_card {
+            border: 0;
+            box-shadow: none;
+            padding: 0;
+        }
+        .o_mw_print_title {
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .o_mw_table {
+            font-size: 11px;
+        }
+    }
+}
+
+// ---------------- v2.1 additions ----------------
+.o_mw_dashboard {
+    .o_mw_prayer_iqama {
+        font-size: 0.78rem;
+        opacity: 0.75;
+        margin-top: 2px;
+    }
+    .o_mw_prayer_next .o_mw_prayer_iqama {
+        color: $mw-gold-light;
+        opacity: 0.95;
+    }
+    .o_mw_pulse_btn {
+        animation: o_mw_pulse 2s ease-in-out infinite;
+    }
+    .o_mw_occasions {
+        margin-top: 16px;
+    }
+    .o_mw_occ_grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px;
+    }
+    .o_mw_occ {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid $mw-border;
+        border-radius: 14px;
+        padding: 10px 12px;
+    }
+    .o_mw_occ_days {
+        flex: 0 0 58px;
+        height: 58px;
+        border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, $mw-green-800, $mw-green-600);
+        color: $mw-gold-light;
+        line-height: 1.1;
+        b {
+            font-size: 1.25rem;
+        }
+        small {
+            font-size: 0.7rem;
+            color: #fff;
+        }
+    }
+}
+.o_mw_reader .o_mw_page_jump {
+    display: flex;
+    gap: 4px;
+    input {
+        width: 110px;
+        border-radius: 10px;
+    }
+}
+.o_mw_adhkar {
+    padding: 16px;
+    @media (min-width: 992px) {
+        padding: 24px 32px;
+    }
+    display: block !important;
+    .o_mw_adhkar_head {
+        position: relative;
+        overflow: hidden;
+        border-radius: 22px;
+        color: #fff;
+        background: radial-gradient(900px 300px at 85% -20%, rgba($mw-gold, 0.3), transparent 60%),
+            linear-gradient(135deg, $mw-green-900, $mw-green-800 45%, $mw-green-600);
+        margin-bottom: 16px;
+    }
+    .o_mw_adhkar_head_inner {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 24px 28px;
+    }
+    .o_mw_eyebrow {
+        color: $mw-gold-light;
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+    .o_mw_adhkar_title {
+        color: #fff;
+        font-weight: 800;
+        font-size: clamp(1.6rem, 3vw, 2.3rem);
+        margin: 6px 0 12px;
+    }
+    .o_mw_tabs_lg {
+        display: inline-flex;
+        gap: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 4px;
+        border-radius: 12px;
+        button {
+            border: 0;
+            background: transparent;
+            color: #fff;
+            border-radius: 9px;
+            padding: 6px 18px;
+            &.active {
+                background: $mw-gold;
+                color: $mw-green-900;
+                font-weight: 800;
+            }
+        }
+    }
+    .o_mw_adhkar_progress {
+        position: relative;
+        width: 130px;
+        text-align: center;
+        margin-inline: auto;
+        svg {
+            width: 120px;
+            height: 120px;
+        }
+    }
+    .o_mw_ring_bg {
+        fill: rgba(255, 255, 255, 0.05);
+        stroke: rgba(255, 255, 255, 0.15);
+        stroke-width: 9;
+    }
+    .o_mw_ring_fg {
+        fill: none;
+        stroke: $mw-gold;
+        stroke-width: 9;
+        stroke-linecap: round;
+        transition: stroke-dasharray 0.4s ease;
+    }
+    .o_mw_adhkar_pct {
+        position: absolute;
+        top: 42px;
+        left: 0;
+        right: 0;
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: $mw-gold-light;
+    }
+    .o_mw_btn_ghost {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+    }
+    .o_mw_adhkar_list {
+        max-width: 920px;
+        margin: 0 auto;
+    }
+    .o_mw_dhikr {
+        background: $mw-card;
+        border: 1px solid $mw-border;
+        border-radius: 18px;
+        padding: 16px 20px 12px;
+        margin-bottom: 12px;
+        transition: opacity 0.3s, border-color 0.3s, transform 0.2s;
+    }
+    .o_mw_dhikr_done {
+        opacity: 0.55;
+        border-color: rgba(#27ae60, 0.5);
+    }
+    .o_mw_dhikr_text {
+        font-size: 1.3rem;
+        line-height: 2.1;
+        white-space: pre-line;
+        margin-bottom: 8px;
+    }
+    .o_mw_dhikr_fadl,
+    .o_mw_dhikr_src {
+        background: rgba($mw-gold, 0.08);
+        border-inline-start: 4px solid $mw-gold;
+        border-radius: 10px;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+        font-size: 0.92rem;
+        line-height: 1.9;
+    }
+    .o_mw_dhikr_bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+    .o_mw_counter {
+        min-width: 86px;
+        height: 64px;
+        border: 0;
+        border-radius: 16px;
+        background: linear-gradient(135deg, $mw-green-700, $mw-green-900);
+        color: $mw-gold-light;
+        font-size: 1.5rem;
+        font-weight: 800;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.1;
+        box-shadow: 0 8px 18px -10px rgba($mw-green-900, 0.9);
+        transition: transform 0.1s;
+        small {
+            font-size: 0.65rem;
+            color: #fff;
+            font-weight: 500;
+        }
+        &:active {
+            transform: scale(0.94);
+        }
+        &.done {
+            background: #27ae60;
+            color: #fff;
+        }
+    }
+    .o_mw_source_note {
+        text-align: center;
+        font-size: 0.75rem;
+        opacity: 0.65;
+        margin: 18px auto 8px;
+    }
+}
+/*rtl:end:ignore*/

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="mawaqeet_prayer_times.Adhkar">
+        <div class="o_action o_mw_app o_mw_adhkar" dir="rtl">
+            <t t-if="ui.book">
+                <header class="o_mw_adhkar_head">
+                    <div class="o_mw_pattern" aria-hidden="true"/>
+                    <div class="o_mw_adhkar_head_inner">
+                        <div>
+                            <div class="o_mw_eyebrow"><i class="fa fa-leaf o_mw_i1"/><t t-esc="ui.book.book"/></div>
+                            <h1 class="o_mw_adhkar_title">
+                                <t t-if="ui.tab === 'morning'">أذكار الصباح</t><t t-else="">أذكار المساء</t>
+                            </h1>
+                            <div class="o_mw_tabs o_mw_tabs_lg">
+                                <button t-att-class="ui.tab === 'morning' ? 'active' : ''" t-on-click="() => this.setTab('morning')"><i class="fa fa-sun-o o_mw_i1"/>الصباح</button>
+                                <button t-att-class="ui.tab === 'evening' ? 'active' : ''" t-on-click="() => this.setTab('evening')"><i class="fa fa-moon-o o_mw_i1"/>المساء</button>
+                            </div>
+                        </div>
+                        <div class="o_mw_adhkar_progress">
+                            <svg viewBox="0 0 120 120">
+                                <circle cx="60" cy="60" r="52" class="o_mw_ring_bg"/>
+                                <circle cx="60" cy="60" r="52" class="o_mw_ring_fg" transform="rotate(-90 60 60)"
+                                        t-att-stroke-dasharray="ringDash"/>
+                            </svg>
+                            <div class="o_mw_adhkar_pct"><t t-esc="arNum(progressPct)"/>٪</div>
+                            <button class="btn btn-sm o_mw_btn_ghost mt-2" t-on-click="reset"><i class="fa fa-refresh o_mw_i1"/>إعادة</button>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="o_mw_adhkar_list">
+                    <article t-foreach="items" t-as="x" t-key="ui.tab + x.i" t-attf-class="o_mw_dhikr {{ isDone(x) ? 'o_mw_dhikr_done' : '' }}">
+                        <p class="o_mw_dhikr_text" t-esc="x.t"/>
+                        <div class="o_mw_dhikr_fadl" t-if="x.f and ui.open[x.i]">
+                            <div class="o_mw_tafsir_label">الفضل</div>
+                            <t t-esc="x.f"/>
+                        </div>
+                        <div class="o_mw_dhikr_src" t-if="x.s and ui.open[x.i]">
+                            <div class="o_mw_tafsir_label">التخريج</div>
+                            <t t-esc="x.s"/>
+                        </div>
+                        <footer class="o_mw_dhikr_bar">
+                            <span class="d-flex gap-1">
+                                <button class="btn btn-sm btn-light" t-on-click="() => this.toggle(x)"><i class="fa fa-info-circle o_mw_i1"/>الفضل والتخريج</button>
+                                <button class="btn btn-sm btn-light" t-on-click="() => this.copy(x)" title="نسخ"><i class="fa fa-copy"/></button>
+                            </span>
+                            <button t-attf-class="o_mw_counter {{ isDone(x) ? 'done' : '' }}" t-on-click="() => this.tap(x)">
+                                <t t-if="isDone(x)"><i class="fa fa-check"/></t>
+                                <t t-else=""><t t-esc="arNum(remaining(x))"/></t>
+                                <small t-esc="x.nd"/>
+                            </button>
+                        </footer>
+                    </article>
+                    <div class="o_mw_source_note">
+                        المصدر: كتاب «حصن المسلم من أذكار الكتاب والسنة» للدكتور سعيد بن علي بن وهف القحطاني — مطابق لموقع الكتاب الرسمي hisnmuslim.com.
+                    </div>
+                </div>
+            </t>
+            <div t-else="" class="o_mw_loading py-5"><i class="fa fa-circle-o-notch fa-spin fa-2x"/></div>
+        </div>
+    </t>
+</templates>

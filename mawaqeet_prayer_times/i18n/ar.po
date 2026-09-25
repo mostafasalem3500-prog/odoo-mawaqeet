@@ -1,0 +1,2005 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mawaqeet_prayer_times
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-25 02:43+0000\n"
+"PO-Revision-Date: 2026-09-25 02:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "(يُعرض أول ١٥٠)"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "<span class=\"me-2\">City</span>"
+msgstr "<span class=\"me-2\">المدينة</span>"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "<span class=\"me-2\">Latitude</span>"
+msgstr "<span class=\"me-2\">خط العرض</span>"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "<span class=\"me-2\">Longitude</span>"
+msgstr "<span class=\"me-2\">خط الطول</span>"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "<span class=\"me-2\">Timezone</span>"
+msgstr "<span class=\"me-2\">المنطقة الزمنية</span>"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "<span class=\"ms-2\">days</span>"
+msgstr "<span class=\"ms-2\">يوم</span>"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.mawaqeet_bookmark_view_list
+msgid "Added on"
+msgstr "تاريخ الإضافة"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.actions.client,name:mawaqeet_prayer_times.action_mawaqeet_adhkar
+#: model:ir.ui.menu,name:mawaqeet_prayer_times.menu_mawaqeet_adhkar
+msgid "Adhkar"
+msgstr "الأذكار"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Asia/Riyadh"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Asr"
+msgstr "العصر"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_adj_asr
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_adj_asr
+msgid "Asr Adjustment (min)"
+msgstr "تعديل العصر (دقيقة)"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_iqama_asr
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_iqama_asr
+msgid "Asr Iqama (min after Adhan)"
+msgstr "إقامة العصر (دقائق بعد الأذان)"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_asr
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_asr
+msgid "Asr Juristic Method"
+msgstr "مذهب حساب العصر"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Asr Method"
+msgstr "طريقة حساب العصر"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.mawaqeet_bookmark_view_form
+msgid "Bookmark"
+msgstr "محفوظ"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Calculation"
+msgstr "الحساب"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_method
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_method
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Calculation Method"
+msgstr "طريقة الحساب"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "City & Coordinates"
+msgstr "المدينة والإحداثيات"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model,name:mawaqeet_prayer_times.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model,name:mawaqeet_prayer_times.model_res_config_settings
+msgid "Config Settings"
+msgstr "إعدادات التهيئة"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Dhuhr"
+msgstr "الظهر"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_adj_dhuhr
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_adj_dhuhr
+msgid "Dhuhr Adjustment (min)"
+msgstr "تعديل الظهر (دقيقة)"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_iqama_dhuhr
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_iqama_dhuhr
+msgid "Dhuhr Iqama (min after Adhan)"
+msgstr "إقامة الظهر (دقائق بعد الأذان)"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Display"
+msgstr "العرض"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_method__turkey
+msgid "Diyanet, Turkey"
+msgstr "رئاسة الشؤون الدينية، تركيا"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_method__dubai
+msgid "Dubai (UAE)"
+msgstr "دبي (الإمارات)"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_method__egyptian
+msgid "Egyptian General Authority of Survey"
+msgstr "الهيئة المصرية العامة للمساحة"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Fajr"
+msgstr "الفجر"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_adj_fajr
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_adj_fajr
+msgid "Fajr Adjustment (min)"
+msgstr "تعديل الفجر (دقيقة)"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_iqama_fajr
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_iqama_fajr
+msgid "Fajr Iqama (min after Adhan)"
+msgstr "إقامة الفجر (دقائق بعد الأذان)"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Fine-tune each prayer to match your local mosque."
+msgstr "اضبط كل صلاة بالدقائق لتطابق مسجد الحي."
+
+#. module: mawaqeet_prayer_times
+#: model:ir.actions.client,name:mawaqeet_prayer_times.action_mawaqeet_hadith
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__mawaqeet_bookmark__kind__hadith
+#: model:ir.ui.menu,name:mawaqeet_prayer_times.menu_mawaqeet_hadith
+msgid "Hadith"
+msgstr "الحديث الشريف"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__book
+msgid "Hadith Book"
+msgstr "كتاب الحديث"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__number
+msgid "Hadith No."
+msgstr "رقم الحديث"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.mawaqeet_bookmark_view_search
+msgid "Hadiths"
+msgstr "الأحاديث"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_asr__hanafi
+msgid "Hanafi"
+msgstr "الحنفي"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Hijri Date Adjustment"
+msgstr "تعديل التاريخ الهجري"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_hijri_adjust
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_hijri_adjust
+msgid "Hijri Day Adjustment"
+msgstr "تعديل اليوم الهجري"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.actions.client,name:mawaqeet_prayer_times.action_mawaqeet_quran
+#: model:ir.ui.menu,name:mawaqeet_prayer_times.menu_mawaqeet_quran
+msgid "Holy Quran"
+msgstr "القرآن الكريم"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Iqama"
+msgstr "الإقامة"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Iqama Times"
+msgstr "أوقات الإقامة"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Isha"
+msgstr "العشاء"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_adj_isha
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_adj_isha
+msgid "Isha Adjustment (min)"
+msgstr "تعديل العشاء (دقيقة)"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_iqama_isha
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_iqama_isha
+msgid "Isha Iqama (min after Adhan)"
+msgstr "إقامة العشاء (دقائق بعد الأذان)"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_method__isna
+msgid "Islamic Society of North America"
+msgstr "الجمعية الإسلامية لأمريكا الشمالية"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__kind
+msgid "Kind"
+msgstr "النوع"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_method__kuwait
+msgid "Kuwait"
+msgstr "الكويت"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_latitude
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_latitude
+msgid "Latitude"
+msgstr "خط العرض"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Location"
+msgstr "الموقع"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_longitude
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_longitude
+msgid "Longitude"
+msgstr "خط الطول"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Maghrib"
+msgstr "المغرب"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_adj_maghrib
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_adj_maghrib
+msgid "Maghrib Adjustment (min)"
+msgstr "تعديل المغرب (دقيقة)"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_iqama_maghrib
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_iqama_maghrib
+msgid "Maghrib Iqama (min after Adhan)"
+msgstr "إقامة المغرب (دقائق بعد الأذان)"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Manual Adjustments (minutes)"
+msgstr "تعديلات يدوية (بالدقائق)"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.actions.client,name:mawaqeet_prayer_times.action_mawaqeet_dashboard
+#: model:ir.ui.menu,name:mawaqeet_prayer_times.menu_mawaqeet_root
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Mawaqeet"
+msgstr "مواقيت"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid ""
+"Minutes between the Adhan and the Iqama, shown under each prayer (Saudi "
+"mosques' usual defaults)."
+msgstr ""
+"عدد الدقائق بين الأذان والإقامة، تظهر تحت كل صلاة (القيم الافتراضية المعمول "
+"بها في مساجد المملكة)."
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_method__mwl
+msgid "Muslim World League"
+msgstr "رابطة العالم الإسلامي"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.actions.act_window,name:mawaqeet_prayer_times.action_mawaqeet_bookmarks
+#: model:ir.ui.menu,name:mawaqeet_prayer_times.menu_mawaqeet_bookmarks
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.mawaqeet_bookmark_view_list
+msgid "My Bookmarks"
+msgstr "مفضلتي"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__note
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.mawaqeet_bookmark_view_form
+msgid "My Note"
+msgstr "ملاحظتي"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid ""
+"Name, latitude and longitude of the place whose prayer times are shown."
+msgstr "اسم المكان وإحداثياته الذي تُعرض مواقيته."
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Next Prayer in Top Bar"
+msgstr "الصلاة القادمة في الشريط العلوي"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.actions.act_window,help:mawaqeet_prayer_times.action_mawaqeet_bookmarks
+msgid "No bookmarks yet"
+msgstr "لا توجد محفوظات بعد"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid ""
+"Pick one of the 173 official Umm Al-Qura locations (cities and governorates "
+"of Saudi Arabia) to fill in the official coordinates, or type your own "
+"below."
+msgstr ""
+"اختر أحد المواقع الرسمية الـ١٧٣ في تقويم أم القرى (مدن ومحافظات المملكة) "
+"لتعبئة الإحداثيات الرسمية، أو أدخل إحداثياتك يدويًا بالأسفل."
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_city
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_city
+msgid "Prayer City"
+msgstr "مدينة المواقيت"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_notify
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_notify
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Prayer Time Notifications"
+msgstr "تنبيهات دخول وقت الصلاة"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.ui.menu,name:mawaqeet_prayer_times.menu_mawaqeet_dashboard
+msgid "Prayer Times"
+msgstr "مواقيت الصلاة"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_timezone
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_timezone
+msgid "Prayer Timezone"
+msgstr "المنطقة الزمنية للمواقيت"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_method__qatar
+msgid "Qatar"
+msgstr "قطر"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model,name:mawaqeet_prayer_times.model_mawaqeet_bookmark
+msgid "Quran / Hadith Bookmark"
+msgstr "محفوظات القرآن والحديث"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__mawaqeet_bookmark__kind__ayah
+msgid "Quran Verse"
+msgstr "آية قرآنية"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.mawaqeet_bookmark_view_search
+msgid "Quran Verses"
+msgstr "الآيات"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_preset
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Saudi City Preset"
+msgstr "مدينة سعودية جاهزة"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.actions.act_window,name:mawaqeet_prayer_times.action_mawaqeet_settings
+#: model:ir.ui.menu,name:mawaqeet_prayer_times.menu_mawaqeet_settings
+msgid "Settings"
+msgstr "الإعدادات"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_show_iqama
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_show_iqama
+msgid "Show Iqama Times"
+msgstr "إظهار أوقات الإقامة"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_company__mawaqeet_show_systray
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_res_config_settings__mawaqeet_show_systray
+msgid "Show Next Prayer in Top Bar"
+msgstr "إظهار الصلاة القادمة في الشريط العلوي"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Show a gentle in-app notice when a prayer time begins."
+msgstr "إظهار تنبيه لطيف داخل النظام عند دخول وقت الصلاة."
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid ""
+"Show the next prayer and a live countdown in the Odoo top bar for every "
+"user."
+msgstr ""
+"عرض الصلاة القادمة مع عدٍّ تنازلي حي في الشريط العلوي لجميع المستخدمين."
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_method__singapore
+msgid "Singapore / Malaysia / Indonesia"
+msgstr "سنغافورة / ماليزيا / إندونيسيا"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_asr__standard
+msgid "Standard (Shafi'i, Maliki, Hanbali)"
+msgstr "الجمهور (الشافعي والمالكي والحنبلي)"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__sura
+msgid "Surah"
+msgstr "السورة"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.actions.act_window,help:mawaqeet_prayer_times.action_mawaqeet_bookmarks
+msgid "Tap the bookmark icon next to any verse or hadith to save it here."
+msgstr "اضغط على أيقونة الحفظ بجوار أي آية أو حديث ليظهر هنا."
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__excerpt
+msgid "Text"
+msgstr "النص"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "The standard method is used in Saudi Arabia."
+msgstr "طريقة الجمهور هي المعتمدة في المملكة العربية السعودية."
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__name
+msgid "Title"
+msgstr "العنوان"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.mawaqeet_bookmark_view_search
+msgid "Type"
+msgstr "النوع"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid "Umm Al-Qura calendar is used. Add or subtract days only if needed."
+msgstr "يُستخدم تقويم أم القرى الرسمي. أضف أو اطرح أيامًا عند الحاجة فقط."
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.res_config_settings_view_form_mawaqeet
+msgid ""
+"Umm Al-Qura is the official method of the Kingdom of Saudi Arabia (Fajr "
+"18.5°, Isha 90 minutes after Maghrib, 120 minutes in Ramadan)."
+msgstr ""
+"أم القرى هي الطريقة الرسمية في المملكة العربية السعودية (الفجر ١٨٫٥°، "
+"والعشاء بعد المغرب بـ٩٠ دقيقة و١٢٠ دقيقة في رمضان)."
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_method__umm_al_qura
+msgid "Umm Al-Qura, Makkah (Saudi Arabia)"
+msgstr "أم القرى، مكة المكرمة (السعودية)"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_company__mawaqeet_method__karachi
+msgid "University of Islamic Sciences, Karachi"
+msgstr "جامعة العلوم الإسلامية بكراتشي"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields,field_description:mawaqeet_prayer_times.field_mawaqeet_bookmark__ayah
+msgid "Verse"
+msgstr "الآية"
+
+#. module: mawaqeet_prayer_times
+#: model_terms:ir.ui.view,arch_db:mawaqeet_prayer_times.mawaqeet_bookmark_view_form
+msgid "Write a reflection or reminder..."
+msgstr "اكتب تدبرًا أو تذكيرًا..."
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "| الجزء"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "آية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "آية اليوم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "آية مع تفسيرها"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "آية وتفسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_201
+msgid "أبانات — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1006
+msgid "أبها — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_3
+msgid "أبو عريش — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_6
+msgid "أحد المسارحة — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_7
+msgid "أحد رفيدة — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "أدر الجهاز حتى تشير الكعبة إلى الأعلى"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/adhkar.xml:0
+msgid "أذكار الصباح"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/adhkar.xml:0
+msgid "أذكار المساء"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_154
+msgid "أضم — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_45
+msgid "أملج — منطقة تبوك"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "أنت متجه إلى القبلة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "إخفاء التفسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/adhkar.xml:0
+msgid "إعادة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "إمساكية الشهر —"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "ا+"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "ا-"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "ابحث باسم السورة أو رقمها"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "ابحث في القرآن الكريم (اكتب كلمة ثم Enter)"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+msgid "ابحث في نص الحديث…"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "اتجاه القبلة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "الأجزاء"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_202
+msgid "الأحساء — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+#: code:addons/mawaqeet_prayer_times/static/src/xml/systray.xml:0
+msgid "الأذكار"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_14
+msgid "الأسياح — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_9
+msgid "الأفلاج — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_170
+msgid "الأمواه — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "الإقامة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "الانتقال إلى صفحة في مصحف المدينة النبوية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1012
+msgid "الباحة — منطقة الباحة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_15
+msgid "البدائع — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_206
+msgid "البدع — منطقة تبوك"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_171
+msgid "البرك — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_195
+msgid "البصر — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_17
+msgid "البكيرية — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_204
+msgid "البيضاء — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+msgid "التحقق من الحديث وتخريجه في موسوعة الدرر السنية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/adhkar.xml:0
+msgid "التخريج"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "التفسير الميسر"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_75
+msgid "الجبيل — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "الجزء"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_26
+msgid "الجموم — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_150
+msgid "الحائر — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_173
+msgid "الحائط — منطقة حائل"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_182
+msgid "الحجرة — منطقة الباحة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/systray.xml:0
+msgid "الحديث"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+msgid "الحديث الشريف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_24
+msgid "الحرث — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_169
+msgid "الحرجة — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_23
+msgid "الحريق — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_25
+msgid "الحناكية — منطقة المدينة المنورة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_80
+msgid "الخبر — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_28
+msgid "الخرج — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_79
+msgid "الخرخير — منطقة نجران"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_29
+msgid "الخرمة — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_76
+msgid "الخفجي — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_18
+msgid "الدائر — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_39
+msgid "الدرب — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_4
+msgid "الدرعية — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_151
+msgid "الدلم — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1005
+msgid "الدمام — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_64
+msgid "الدوادمي — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_42
+msgid "الرس — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1001
+msgid "الرياض — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_41
+msgid "الريث — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_197
+msgid "الرين — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_49
+msgid "الزلفي — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_48
+msgid "السليل — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_174
+msgid "السليمي — منطقة حائل"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "السور"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_107
+msgid "الشماسية — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_177
+msgid "الشملي — منطقة حائل"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_43
+msgid "الشنان — منطقة حائل"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "الشهر التالي"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "الشهر السابق"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/adhkar.xml:0
+msgid "الصباح"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "الصلاة القادمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_109
+msgid "الطائف — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_181
+msgid "الطوال — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_161
+msgid "الظهران — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_13
+msgid "العارضة — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_203
+msgid "العديد — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_157
+msgid "العرضيات — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_12
+msgid "العقيق — منطقة الباحة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_38
+msgid "العلا — منطقة المدينة المنورة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_178
+msgid "العويقلية — منطقة الحدود الشمالية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_11
+msgid "العيدابي — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_158
+msgid "العيص — منطقة المدينة المنورة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_191
+msgid "العيينة — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_19
+msgid "الغاط — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_20
+msgid "الغزالة — منطقة حائل"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_205
+msgid "الفرشة — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/adhkar.xml:0
+msgid "الفضل"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/adhkar.xml:0
+msgid "الفضل والتخريج"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "القادمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_40
+msgid "القرى — منطقة الباحة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_21
+msgid "القريات — منطقة الجوف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_91
+msgid "القطيف — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_66
+msgid "القنفذة — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_196
+msgid "القوارة — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_22
+msgid "القويعية — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_27
+msgid "الكامل — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_30
+msgid "الليث — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_165
+msgid "المبرز — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/systray.xml:0
+msgid "المتبقي على"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_34
+msgid "المجاردة — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_85
+msgid "المجمعة — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_32
+msgid "المخواة — منطقة الباحة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1003
+msgid "المدينة المنورة — منطقة المدينة المنورة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_33
+msgid "المذنب — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_87
+msgid "المزاحمية — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/adhkar.xml:0
+msgid "المساء"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid ""
+"المصادر: نص المصحف الشريف وخطه من مجمع الملك فهد لطباعة المصحف الشريف (رواية حفص، الإصدار ١٨) •\n"
+"                    التفسير الميسر — مجمع الملك فهد • الأربعون النووية ورياض الصالحين للإمام النووي • أذكار حصن المسلم •\n"
+"                    التقويم الهجري وفق تقويم أم القرى الرسمي • المواقيت تُحسب محليًا بطريقة أم القرى وبقواعد تقريب التقويم الرسمي (ummulqura.org.sa)."
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/systray.xml:0
+msgid "المصحف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "المصحف الشريف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/adhkar.xml:0
+msgid ""
+"المصدر: كتاب «حصن المسلم من أذكار الكتاب والسنة» للدكتور سعيد بن علي بن وهف "
+"القحطاني — مطابق لموقع الكتاب الرسمي hisnmuslim.com."
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "المناسبات القادمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_35
+msgid "المندق — منطقة الباحة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/systray.xml:0
+msgid "المواقيت"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "الموقع والإعدادات"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_198
+msgid "المويه — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_46
+msgid "النبهانية — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid ""
+"النص القرآني: مجمع الملك فهد لطباعة المصحف الشريف — رواية حفص عن عاصم "
+"(الإصدار ١٨) • التفسير: التفسير الميسر، مجمع الملك فهد."
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_37
+msgid "النعيرية — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_36
+msgid "النماص — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_10
+msgid "الهفوف — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_44
+msgid "الوجه — منطقة تبوك"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "اليوم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_166
+msgid "بارق — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_199
+msgid "بحرة — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_51
+msgid "بدر الجنوب — منطقة نجران"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_50
+msgid "بدر — منطقة المدينة المنورة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1004
+msgid "بريدة — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_54
+msgid "بقعاء — منطقة حائل"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_2
+msgid "بقيق — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_53
+msgid "بلجرشي — منطقة الباحة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_55
+msgid "بلقرن — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_207
+msgid "بني حسن — منطقة الباحة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_52
+msgid "بيش — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_56
+msgid "بيشة — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_164
+msgid "تاروت — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1007
+msgid "تبوك — منطقة تبوك"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_110
+msgid "تثليث — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "تحقق في الدرر السنية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_114
+msgid "تربة — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "تشغيل البوصلة (للجوال)"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "تصغير الخط"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "تكبير الخط"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_185
+msgid "تمير — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_167
+msgid "تنومة — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_111
+msgid "تيماء — منطقة تبوك"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_112
+msgid "ثادق — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_113
+msgid "ثار — منطقة نجران"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_189
+msgid "ثول — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "ج"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1010
+msgid "جازان — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_74
+msgid "جدة — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_65
+msgid "جزر فرسان — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_186
+msgid "جلاجل — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+msgid "جميع الكتب"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1008
+msgid "حائل — منطقة حائل"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_67
+msgid "حبونا — منطقة نجران"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+msgid "حديث"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "حديث اليوم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_72
+msgid "حريملاء — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_68
+msgid "حفر الباطن — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "حفظ"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_70
+msgid "حقل — منطقة تبوك"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_71
+msgid "حوطة بني تميم — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_187
+msgid "حوطة سدير — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_81
+msgid "خباش — منطقة نجران"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_82
+msgid "خليص — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_78
+msgid "خميس مشيط — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_77
+msgid "خيبر — منطقة المدينة المنورة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_63
+msgid "دومة الجندل — منطقة الجوف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_194
+msgid "ذهبان — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_97
+msgid "رأس تنورة — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_93
+msgid "رابغ — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_209
+msgid "راس تنورة — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_98
+msgid "رجال ألمع — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_94
+msgid "رفحاء — منطقة الحدود الشمالية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_95
+msgid "رماح — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "رمضان كريم — العشاء بعد المغرب بـ١٢٠ دقيقة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_96
+msgid "رنية — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_188
+msgid "روضة سدير — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_100
+msgid "رياض الخبراء — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_193
+msgid "سدوس — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_104
+msgid "سراة عبيدة — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1013
+msgid "سكاكا — منطقة الجوف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_176
+msgid "سميراء — منطقة حائل"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "سورة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "ش"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_106
+msgid "شرورة — منطقة نجران"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_105
+msgid "شقراء — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_103
+msgid "صامطة — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_101
+msgid "صبيا — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "صفحة ١–٦٠٤"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_208
+msgid "صوير — منطقة الجوف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_59
+msgid "ضباء — منطقة تبوك"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_62
+msgid "ضرماء — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_160
+msgid "ضرية — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_61
+msgid "ضمد — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "طباعة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_184
+msgid "طبرجل — منطقة الجوف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_168
+msgid "طريب — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_115
+msgid "طريف — منطقة الحدود الشمالية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_60
+msgid "ظهران الجنوب — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+msgid "عرض المزيد ("
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "عرض متصل كالمصحف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1009
+msgid "عرعر — منطقة الحدود الشمالية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_5
+msgid "عفيف — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_159
+msgid "عقلة الصقور — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_89
+msgid "عنيزة — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_90
+msgid "عيون الجواء — منطقة القصيم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "غ"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_183
+msgid "غامد الزناد — منطقة الباحة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "فتح في الكتاب"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "فتح في المصحف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "فجر الغد"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_179
+msgid "فيفاء — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "ق"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "قراءة سورة الكهف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_8
+msgid "قرية العليا — المنطقة الشرقية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_92
+msgid "قلوة — منطقة الباحة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "لا توجد آيات محفوظة بعد. اضغط على أي آية ثم «حفظ»."
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+msgid "لا توجد نتائج."
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "لا توجد نتائج. جرّب كلمة أخرى أو جزءًا من الكلمة."
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+msgid "للبحث في موسوعة الدرر السنية."
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+msgid "لم تحفظ أحاديث بعد."
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_190
+msgid "ليلى — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "م"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+msgid "متبقٍ)"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_84
+msgid "محايل عسير — منطقة عسير"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_152
+msgid "مرات — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "مصحف"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "مصحف المدينة النبوية — مجمع الملك فهد"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "مفضلتي"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1002
+msgid "مكة المكرمة — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_192
+msgid "ملهم — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_31
+msgid "مهد الذهب — منطقة المدينة المنورة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/systray.xml:0
+msgid "مواقيت الصلاة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "مواقيت الصلاة —"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_175
+msgid "موقق — منطقة حائل"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_155
+msgid "ميسان — منطقة مكة المكرمة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "نتائج البحث عن «"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_1011
+msgid "نجران — منطقة نجران"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/adhkar.xml:0
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "نسخ"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/hadith.xml:0
+msgid ""
+"نصوص الأحاديث من كتابَي الإمام النووي كما هي، مع حكم التخريج الوارد في الكتاب.\n"
+"                            للتحقق من درجة أي حديث استخدم زر"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_180
+msgid "هروب — منطقة جازان"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "هـ"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_116
+msgid "وادي الدواسر — منطقة الرياض"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_200
+msgid "وادي الفرع — منطقة المدينة المنورة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "وفق تقويم أم القرى"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "يبدأ من"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_117
+msgid "يدمة — منطقة نجران"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#: model:ir.model.fields.selection,name:mawaqeet_prayer_times.selection__res_config_settings__mawaqeet_preset__umq_118
+msgid "ينبع — منطقة المدينة المنورة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "يوم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "يوم الجمعة — أكثروا من الصلاة على النبي صلى الله عليه وسلم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "— الآية"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "— رقم"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "• ص"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/quran.xml:0
+msgid "• صفحة"
+msgstr ""
+
+#. module: mawaqeet_prayer_times
+#. odoo-javascript
+#: code:addons/mawaqeet_prayer_times/static/src/xml/dashboard.xml:0
+msgid "﴿ سورة"
+msgstr ""

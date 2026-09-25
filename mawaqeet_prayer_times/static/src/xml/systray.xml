@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="mawaqeet_prayer_times.Systray">
+        <div class="o_mawaqeet_systray" t-if="visible">
+            <Dropdown position="'bottom-end'" menuClass="'o_mawaqeet_systray_menu p-0'">
+                <button class="o_mawaqeet_systray_btn d-flex align-items-center gap-1" dir="rtl" title="مواقيت الصلاة">
+                    <i class="fa fa-clock-o"/>
+                    <span class="d-none d-md-inline fw-bold" t-esc="state.next.name"/>
+                    <span class="o_mawaqeet_count" t-esc="countdown"/>
+                </button>
+                <t t-set-slot="content">
+                    <div class="o_mawaqeet_pop" dir="rtl">
+                        <div class="o_mawaqeet_pop_head">
+                            <div class="small opacity-75" t-esc="state.config.city"/>
+                            <div class="fw-bold" t-esc="hijri"/>
+                            <div class="o_mawaqeet_pop_next">
+                                <span>المتبقي على <t t-esc="state.next.name"/></span>
+                                <span class="o_mawaqeet_count fs-5" t-esc="countdown"/>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled m-0 p-2">
+                            <li t-foreach="prayers" t-as="p" t-key="p.key"
+                                t-attf-class="d-flex justify-content-between align-items-center px-2 py-1 rounded {{ isNext(p.key) ? 'o_mawaqeet_is_next' : '' }} {{ p.notPrayer ? 'opacity-75' : '' }}">
+                                <span><i t-attf-class="fa {{ p.icon }} o_mw_i2"/><t t-esc="p.name"/></span>
+                                <span class="fw-bold" t-esc="time(p.key)"/>
+                            </li>
+                        </ul>
+                        <div class="d-flex gap-1 p-2 pt-0">
+                            <button class="btn btn-sm btn-light flex-fill" t-on-click="() => this.open('mawaqeet.dashboard')">المواقيت</button>
+                            <button class="btn btn-sm btn-light flex-fill" t-on-click="() => this.open('mawaqeet.quran')">المصحف</button>
+                            <button class="btn btn-sm btn-light flex-fill" t-on-click="() => this.open('mawaqeet.hadith')">الحديث</button>
+                            <button class="btn btn-sm btn-light flex-fill" t-on-click="() => this.open('mawaqeet.adhkar')">الأذكار</button>
+                        </div>
+                    </div>
+                </t>
+            </Dropdown>
+        </div>
+    </t>
+</templates>

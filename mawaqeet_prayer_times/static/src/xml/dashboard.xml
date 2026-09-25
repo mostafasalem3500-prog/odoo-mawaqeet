@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="mawaqeet_prayer_times.KaabaIcon">
+        <svg viewBox="0 0 64 64" class="o_mw_kaaba" aria-hidden="true">
+            <path d="M12 22 L32 14 L52 22 L52 50 L32 58 L12 50 Z" fill="#111"/>
+            <path d="M12 22 L32 30 L52 22 L32 14 Z" fill="#2a2a2a"/>
+            <path d="M32 30 L32 58" stroke="#333" stroke-width="1"/>
+            <path d="M12 28 L32 36 L52 28" fill="none" stroke="#d4af37" stroke-width="3"/>
+            <rect x="37" y="40" width="7" height="11" fill="#d4af37" transform="skewY(-22) translate(0 16)"/>
+        </svg>
+    </t>
+
+    <t t-name="mawaqeet_prayer_times.Dashboard">
+        <div class="o_action o_mw_app o_mw_dashboard" dir="rtl">
+            <t t-if="state.ready">
+                <!-- HERO -->
+                <section class="o_mw_hero">
+                    <div class="o_mw_pattern" aria-hidden="true"/>
+                    <div class="o_mw_hero_inner">
+                        <div class="o_mw_hero_text">
+                            <div class="o_mw_eyebrow"><i class="fa fa-map-marker o_mw_i1"/> <t t-esc="cfg.city"/></div>
+                            <h1 class="o_mw_date"><t t-esc="weekday"/>، <t t-esc="hijri"/></h1>
+                            <div class="o_mw_sub"><t t-esc="gregorian"/></div>
+                            <div class="o_mw_badges">
+                                <span class="o_mw_badge"><i class="fa fa-check-circle o_mw_i1"/><t t-esc="methodLabel"/></span>
+                                <span class="o_mw_badge o_mw_badge_gold" t-if="isRamadan"><i class="fa fa-moon-o o_mw_i1"/>رمضان كريم — العشاء بعد المغرب بـ١٢٠ دقيقة</span>
+                                <span class="o_mw_badge" t-if="fastingHint"><i class="fa fa-moon-o o_mw_i1"/><t t-esc="fastingHint"/></span>
+                                <span class="o_mw_badge o_mw_badge_gold" t-if="isFriday"><i class="fa fa-star o_mw_i1"/>يوم الجمعة — أكثروا من الصلاة على النبي صلى الله عليه وسلم</span>
+                            </div>
+                            <div class="o_mw_hero_actions">
+                                <button class="btn o_mw_btn_gold o_mw_pulse_btn" t-if="adhkarPrompt" t-on-click="() => this.openAdhkar(adhkarPrompt.tab)"><i class="fa fa-leaf o_mw_i1"/><t t-esc="adhkarPrompt.label"/></button>
+                                <button class="btn o_mw_btn_gold" t-if="isFriday" t-on-click="openKahf"><i class="fa fa-book o_mw_i1"/>قراءة سورة الكهف</button>
+                                <button class="btn o_mw_btn_gold" t-on-click="() => this.go('mawaqeet.quran')"><i class="fa fa-book o_mw_i1"/>المصحف الشريف</button>
+                                <button class="btn o_mw_btn_ghost" t-on-click="() => this.go('mawaqeet.hadith')"><i class="fa fa-quote-right o_mw_i1"/>الحديث الشريف</button>
+                                <button class="btn o_mw_btn_ghost" t-if="!adhkarPrompt" t-on-click="() => this.openAdhkar()"><i class="fa fa-leaf o_mw_i1"/>الأذكار</button>
+                                <button class="btn o_mw_btn_ghost" t-if="cfg.is_admin" t-on-click="openSettings"><i class="fa fa-cog o_mw_i1"/>الموقع والإعدادات</button>
+                            </div>
+                        </div>
+                        <div class="o_mw_ring_wrap">
+                            <svg viewBox="0 0 200 200" class="o_mw_ring">
+                                <circle cx="100" cy="100" r="88" class="o_mw_ring_bg"/>
+                                <circle cx="100" cy="100" r="88" class="o_mw_ring_fg" t-att-stroke-dasharray="ringDash" transform="rotate(-90 100 100)"/>
+                            </svg>
+                            <div class="o_mw_ring_label">
+                                <div class="o_mw_ring_small">الصلاة القادمة</div>
+                                <div class="o_mw_ring_name" t-esc="state.next.name"/>
+                                <div class="o_mw_ring_count" t-esc="countdown"/>
+                                <div class="o_mw_ring_small" t-esc="time(state.next.key)" t-if="!state.next.tomorrow"/>
+                                <div class="o_mw_ring_small" t-else="">فجر الغد</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PRAYER CARDS -->
+                <section class="o_mw_prayers">
+                    <div t-foreach="prayers" t-as="p" t-key="p.key" t-att-class="cardClass(p)">
+                        <i t-attf-class="fa {{ p.icon }} o_mw_prayer_icon"/>
+                        <div class="o_mw_prayer_name" t-esc="p.name"/>
+                        <div class="o_mw_prayer_time" t-esc="time(p.key)"/>
+                        <div class="o_mw_prayer_iqama" t-if="!p.notPrayer and iqama(p.key)">الإقامة <t t-esc="iqama(p.key)"/></div>
+                        <div class="o_mw_prayer_tag" t-if="state.next.key === p.key and !state.next.tomorrow">القادمة</div>
+                    </div>
+                </section>
+
+                <div class="o_mw_grid">
+                    <!-- AYAH OF THE DAY -->
+                    <section class="o_mw_card o_mw_ayah_card">
+                        <header class="o_mw_card_head">
+                            <h3><i class="fa fa-book o_mw_i2"/>آية اليوم</h3>
+                            <span class="o_mw_source">مصحف المدينة النبوية — مجمع الملك فهد</span>
+                        </header>
+                        <t t-if="ui.ayah">
+                            <p class="o_mw_quran_text o_mw_ayah_big" t-esc="ui.ayah.text"/>
+                            <div class="o_mw_ref">﴿ سورة <t t-esc="ui.ayah.name"/> — الآية <t t-esc="arNum(ui.ayah.ayah)"/> ﴾</div>
+                            <div class="o_mw_tafsir" t-if="ui.showTafsir">
+                                <div class="o_mw_tafsir_label">التفسير الميسر</div>
+                                <t t-esc="ui.ayah.tafsir"/>
+                            </div>
+                            <div class="o_mw_card_actions">
+                                <button class="btn btn-sm btn-light" t-on-click="() => this.ui.showTafsir = !this.ui.showTafsir">
+                                    <i class="fa fa-lightbulb-o o_mw_i1"/><t t-if="ui.showTafsir">إخفاء التفسير</t><t t-else="">التفسير الميسر</t>
+                                </button>
+                                <button class="btn btn-sm btn-light" t-on-click="openAyah"><i class="fa fa-external-link o_mw_i1"/>فتح في المصحف</button>
+                            </div>
+                        </t>
+                        <div t-else="" class="o_mw_loading"><i class="fa fa-circle-o-notch fa-spin"/></div>
+                    </section>
+
+                    <!-- QIBLA -->
+                    <section class="o_mw_card o_mw_qibla_card">
+                        <header class="o_mw_card_head">
+                            <h3><i class="fa fa-compass o_mw_i2"/>اتجاه القبلة</h3>
+                            <span class="o_mw_source" t-esc="qiblaText + ' من الشمال الجغرافي'"/>
+                        </header>
+                        <div t-attf-class="o_mw_compass {{ facingQibla ? 'o_mw_compass_ok' : '' }}">
+                            <div class="o_mw_dial" t-attf-style="transform: rotate({{ dialRotation }}deg)">
+                                <span class="o_mw_n">ش</span><span class="o_mw_e">ق</span><span class="o_mw_s">ج</span><span class="o_mw_w">غ</span>
+                                <div class="o_mw_needle" t-attf-style="transform: rotate({{ qibla }}deg)">
+                                    <div class="o_mw_needle_bar"/>
+                                    <div class="o_mw_needle_kaaba"><t t-call="mawaqeet_prayer_times.KaabaIcon"/></div>
+                                </div>
+                                <div class="o_mw_hub"/>
+                            </div>
+                        </div>
+                        <div class="text-center small mt-2" t-esc="distance"/>
+                        <div class="text-center mt-2">
+                            <button class="btn btn-sm btn-light" t-if="!ui.compassOn" t-on-click="enableCompass"><i class="fa fa-mobile o_mw_i1"/>تشغيل البوصلة (للجوال)</button>
+                            <span class="small text-success fw-bold" t-elif="facingQibla"><i class="fa fa-check o_mw_i1"/>أنت متجه إلى القبلة</span>
+                            <span class="small text-muted" t-else="">أدر الجهاز حتى تشير الكعبة إلى الأعلى</span>
+                        </div>
+                    </section>
+
+                    <!-- HADITH OF THE DAY -->
+                    <section class="o_mw_card o_mw_hadith_card">
+                        <header class="o_mw_card_head">
+                            <h3><i class="fa fa-quote-right o_mw_i2"/>حديث اليوم</h3>
+                            <span class="o_mw_source" t-if="ui.hadith"><t t-esc="ui.hadith.title"/> — رقم <t t-esc="arNum(ui.hadith.number)"/></span>
+                        </header>
+                        <t t-if="ui.hadith">
+                            <p class="o_mw_hadith_text" t-esc="ui.hadith.text"/>
+                            <div class="o_mw_card_actions">
+                                <button class="btn btn-sm btn-light" t-on-click="openHadith"><i class="fa fa-external-link o_mw_i1"/>فتح في الكتاب</button>
+                                <a class="btn btn-sm btn-light" t-att-href="dorarLink(ui.hadith.text)" target="_blank" rel="noopener"><i class="fa fa-search o_mw_i1"/>تحقق في الدرر السنية</a>
+                            </div>
+                        </t>
+                        <div t-else="" class="o_mw_loading"><i class="fa fa-circle-o-notch fa-spin"/></div>
+                    </section>
+                </div>
+
+                <!-- OCCASIONS -->
+                <section class="o_mw_card o_mw_occasions" t-if="ui.occasions.length">
+                    <header class="o_mw_card_head">
+                        <h3><i class="fa fa-star-o o_mw_i2"/>المناسبات القادمة</h3>
+                        <span class="o_mw_source">وفق تقويم أم القرى</span>
+                    </header>
+                    <div class="o_mw_occ_grid">
+                        <div t-foreach="ui.occasions" t-as="o" t-key="o.key" class="o_mw_occ">
+                            <div class="o_mw_occ_days"><b t-esc="arNum(o.days)"/><small>يوم</small></div>
+                            <div>
+                                <div class="fw-bold" t-esc="o.name"/>
+                                <div class="small opacity-75"><t t-esc="o.hijri"/> • <t t-esc="o.greg"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MONTHLY TIMETABLE -->
+                <section class="o_mw_card o_mw_month" t-if="ui.month">
+                    <header class="o_mw_card_head">
+                        <h3><i class="fa fa-calendar o_mw_i2"/>إمساكية الشهر — <t t-esc="ui.month.title"/> <small class="text-muted" t-esc="'(' + ui.month.hijri + ')'"/></h3>
+                        <div class="d-flex gap-1 d-print-none">
+                            <button class="btn btn-sm btn-light" t-on-click="() => this.shiftMonth(-1)" title="الشهر السابق"><i class="fa fa-chevron-right"/></button>
+                            <button class="btn btn-sm btn-light" t-on-click="() => this.shiftMonth(1)" title="الشهر التالي"><i class="fa fa-chevron-left"/></button>
+                            <button class="btn btn-sm btn-light" t-on-click="printMonth"><i class="fa fa-print o_mw_i1"/>طباعة</button>
+                        </div>
+                    </header>
+                    <div class="o_mw_print_title d-none d-print-block">
+                        مواقيت الصلاة — <t t-esc="cfg.city"/> — <t t-esc="ui.month.title"/> (<t t-esc="ui.month.hijri"/>) — <t t-esc="methodLabel"/>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm o_mw_table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>اليوم</th><th>م</th><th>هـ</th>
+                                    <th t-foreach="prayers" t-as="p" t-key="p.key" t-esc="p.name"/>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="ui.month.rows" t-as="r" t-key="r.key"
+                                    t-attf-class="{{ r.today ? 'o_mw_row_today' : '' }} {{ r.friday ? 'o_mw_row_friday' : '' }}">
+                                    <td t-esc="r.day"/><td t-esc="r.greg"/><td class="text-nowrap" t-esc="r.hijri"/>
+                                    <td t-foreach="r.times" t-as="c" t-key="c.key" class="text-nowrap" t-esc="c.v"/>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <footer class="o_mw_footer">
+                    المصادر: نص المصحف الشريف وخطه من مجمع الملك فهد لطباعة المصحف الشريف (رواية حفص، الإصدار ١٨) •
+                    التفسير الميسر — مجمع الملك فهد • الأربعون النووية ورياض الصالحين للإمام النووي • أذكار حصن المسلم •
+                    التقويم الهجري وفق تقويم أم القرى الرسمي • المواقيت تُحسب محليًا بطريقة أم القرى وبقواعد تقريب التقويم الرسمي (ummulqura.org.sa).
+                </footer>
+            </t>
+            <div t-else="" class="o_mw_loading py-5"><i class="fa fa-circle-o-notch fa-spin fa-2x"/></div>
+        </div>
+    </t>
+</templates>

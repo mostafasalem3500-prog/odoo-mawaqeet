@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_mawaqeet" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.mawaqeet</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Mawaqeet" string="Mawaqeet" name="mawaqeet_prayer_times">
+                    <block title="Location" name="mawaqeet_location">
+                        <setting string="Saudi City Preset" company_dependent="1"
+                                 help="Pick one of the 173 official Umm Al-Qura locations (cities and governorates of Saudi Arabia) to fill in the official coordinates, or type your own below.">
+                            <field name="mawaqeet_preset" class="w-75"/>
+                        </setting>
+                        <setting string="City &amp; Coordinates" company_dependent="1"
+                                 help="Name, latitude and longitude of the place whose prayer times are shown.">
+                            <div class="d-flex flex-column gap-1">
+                                <div><span class="me-2">City</span><field name="mawaqeet_city" class="w-75"/></div>
+                                <div><span class="me-2">Latitude</span><field name="mawaqeet_latitude" class="w-50"/></div>
+                                <div><span class="me-2">Longitude</span><field name="mawaqeet_longitude" class="w-50"/></div>
+                                <div><span class="me-2">Timezone</span><field name="mawaqeet_timezone" class="w-50" placeholder="Asia/Riyadh"/></div>
+                            </div>
+                        </setting>
+                    </block>
+                    <block title="Calculation" name="mawaqeet_calc">
+                        <setting string="Calculation Method" company_dependent="1"
+                                 help="Umm Al-Qura is the official method of the Kingdom of Saudi Arabia (Fajr 18.5°, Isha 90 minutes after Maghrib, 120 minutes in Ramadan).">
+                            <field name="mawaqeet_method" class="w-75"/>
+                        </setting>
+                        <setting string="Asr Method" company_dependent="1" help="The standard method is used in Saudi Arabia.">
+                            <field name="mawaqeet_asr" class="w-75"/>
+                        </setting>
+                        <setting string="Hijri Date Adjustment" company_dependent="1"
+                                 help="Umm Al-Qura calendar is used. Add or subtract days only if needed.">
+                            <field name="mawaqeet_hijri_adjust" class="text-center" style="width: 6ch;"/><span class="ms-2">days</span>
+                        </setting>
+                        <setting string="Manual Adjustments (minutes)" company_dependent="1"
+                                 help="Fine-tune each prayer to match your local mosque.">
+                            <div class="d-flex flex-wrap gap-3">
+                                <div>Fajr <field name="mawaqeet_adj_fajr" class="text-center" style="width: 5ch;"/></div>
+                                <div>Dhuhr <field name="mawaqeet_adj_dhuhr" class="text-center" style="width: 5ch;"/></div>
+                                <div>Asr <field name="mawaqeet_adj_asr" class="text-center" style="width: 5ch;"/></div>
+                                <div>Maghrib <field name="mawaqeet_adj_maghrib" class="text-center" style="width: 5ch;"/></div>
+                                <div>Isha <field name="mawaqeet_adj_isha" class="text-center" style="width: 5ch;"/></div>
+                            </div>
+                        </setting>
+                    </block>
+                    <block title="Iqama" name="mawaqeet_iqama">
+                        <setting string="Iqama Times" company_dependent="1"
+                                 help="Minutes between the Adhan and the Iqama, shown under each prayer (Saudi mosques' usual defaults).">
+                            <field name="mawaqeet_show_iqama"/>
+                            <div class="d-flex flex-wrap gap-3 mt-2" invisible="not mawaqeet_show_iqama">
+                                <div>Fajr <field name="mawaqeet_iqama_fajr" class="text-center" style="width: 5ch;"/></div>
+                                <div>Dhuhr <field name="mawaqeet_iqama_dhuhr" class="text-center" style="width: 5ch;"/></div>
+                                <div>Asr <field name="mawaqeet_iqama_asr" class="text-center" style="width: 5ch;"/></div>
+                                <div>Maghrib <field name="mawaqeet_iqama_maghrib" class="text-center" style="width: 5ch;"/></div>
+                                <div>Isha <field name="mawaqeet_iqama_isha" class="text-center" style="width: 5ch;"/></div>
+                            </div>
+                        </setting>
+                    </block>
+                    <block title="Display" name="mawaqeet_display">
+                        <setting string="Next Prayer in Top Bar" company_dependent="1"
+                                 help="Show the next prayer and a live countdown in the Odoo top bar for every user.">
+                            <field name="mawaqeet_show_systray"/>
+                        </setting>
+                        <setting string="Prayer Time Notifications" company_dependent="1"
+                                 help="Show a gentle in-app notice when a prayer time begins.">
+                            <field name="mawaqeet_notify"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_mawaqeet_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'module': 'mawaqeet_prayer_times', 'bin_size': False}</field>
+    </record>
+</odoo>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="mawaqeet_prayer_times.Hadith">
+        <div class="o_action o_mw_app o_mw_reader" dir="rtl">
+            <aside t-attf-class="o_mw_side {{ ui.sidebar ? 'o_mw_side_open' : '' }}">
+                <div class="o_mw_side_head">
+                    <div class="o_mw_side_title"><i class="fa fa-quote-right o_mw_i2"/>الحديث الشريف</div>
+                    <div class="o_mw_books">
+                        <button t-foreach="books" t-as="bk" t-key="bk.key"
+                                t-attf-class="o_mw_book {{ ui.book and ui.book.key === bk.key ? 'active' : '' }}"
+                                t-on-click="() => this.openBook(bk.key)">
+                            <span class="o_mw_book_title" t-esc="bk.title"/>
+                            <span class="o_mw_book_desc" t-esc="bk.desc"/>
+                        </button>
+                    </div>
+                </div>
+                <div class="o_mw_side_list" t-if="ui.book">
+                    <t t-if="ui.book.chapters.length > 1">
+                        <button t-attf-class="o_mw_sura_item {{ ui.chapter === null ? 'active' : '' }}" t-on-click="() => this.selectChapter(null)">
+                            <span class="o_mw_sura_no"><i class="fa fa-th-list"/></span>
+                            <span class="flex-fill o_mw_tr"><span class="o_mw_sura_name">جميع الكتب</span></span>
+                        </button>
+                        <button t-foreach="ui.book.chapters" t-as="c" t-key="c.id"
+                                t-attf-class="o_mw_sura_item {{ ui.chapter === c.id ? 'active' : '' }}"
+                                t-on-click="() => this.selectChapter(c.id)">
+                            <span class="o_mw_sura_no" t-esc="arNum(c_index + 1)"/>
+                            <span class="flex-fill o_mw_tr">
+                                <span class="o_mw_sura_name" t-esc="c.title"/>
+                                <span class="o_mw_sura_meta"><t t-esc="arNum(chapterCount(c.id))"/> حديث</span>
+                            </span>
+                        </button>
+                    </t>
+                    <div class="o_mw_side_sep">مفضلتي</div>
+                    <div t-if="!hadithBookmarks.length" class="text-muted small px-3 pb-3">لم تحفظ أحاديث بعد.</div>
+                    <button t-foreach="hadithBookmarks" t-as="b" t-key="b.id" class="o_mw_sura_item" t-on-click="() => this.openBookmark(b)">
+                        <i class="fa fa-bookmark text-warning o_mw_i2"/>
+                        <span class="flex-fill o_mw_tr"><span class="o_mw_sura_name" t-esc="b.name"/></span>
+                    </button>
+                </div>
+            </aside>
+
+            <main class="o_mw_main">
+                <div class="o_mw_toolbar">
+                    <button class="btn btn-sm btn-light d-lg-none" t-on-click="() => this.ui.sidebar = !this.ui.sidebar"><i class="fa fa-list"/></button>
+                    <div class="o_mw_search">
+                        <i class="fa fa-search"/>
+                        <input class="form-control form-control-sm" placeholder="ابحث في نص الحديث…" t-model="ui.query" t-on-input="onSearch"/>
+                    </div>
+                </div>
+                <div class="o_mw_reader_body" t-ref="list">
+                    <t t-if="ui.book and !ui.loading">
+                        <div class="o_mw_book_header">
+                            <div class="o_mw_book_name" t-esc="ui.book.title"/>
+                            <div class="o_mw_book_author" t-esc="ui.book.author"/>
+                            <div class="o_mw_chapter_name" t-if="chapterTitle !== ui.book.title" t-esc="chapterTitle"/>
+                        </div>
+                        <div t-if="!filtered.length" class="text-muted p-4 text-center">لا توجد نتائج.</div>
+                        <article t-foreach="visible" t-as="h" t-key="h.i" t-att-data-hadith="h.i"
+                                 t-attf-class="o_mw_hadith {{ ui.focus === h.i ? 'active' : '' }}">
+                            <div class="o_mw_ayah_bar">
+                                <span class="o_mw_hadith_no" t-esc="arNum(h.i)"/>
+                                <span class="o_mw_ayah_tools">
+                                    <button class="btn btn-sm btn-link" t-on-click="() => this.copy(h)" title="نسخ"><i class="fa fa-copy"/></button>
+                                    <button class="btn btn-sm btn-link" t-on-click="() => this.toggleBookmark(h)" title="حفظ">
+                                        <i t-attf-class="fa {{ isBookmarked(h) ? 'fa-bookmark text-warning' : 'fa-bookmark-o' }}"/>
+                                    </button>
+                                    <a class="btn btn-sm btn-link" t-att-href="dorarLink(h.t)" target="_blank" rel="noopener" title="التحقق من الحديث وتخريجه في موسوعة الدرر السنية"><i class="fa fa-check-square-o"/></a>
+                                </span>
+                            </div>
+                            <p class="o_mw_hadith_text" t-esc="h.t"/>
+                        </article>
+                        <div class="text-center my-3" t-if="filtered.length > ui.limit">
+                            <button class="btn btn-light" t-on-click="more">عرض المزيد (<t t-esc="arNum(filtered.length - ui.limit)"/> متبقٍ)</button>
+                        </div>
+                        <div class="o_mw_source_note">
+                            نصوص الأحاديث من كتابَي الإمام النووي كما هي، مع حكم التخريج الوارد في الكتاب.
+                            للتحقق من درجة أي حديث استخدم زر <i class="fa fa-check-square-o"/> للبحث في موسوعة الدرر السنية.
+                        </div>
+                    </t>
+                    <div t-else="" class="o_mw_loading py-5"><i class="fa fa-circle-o-notch fa-spin fa-2x"/></div>
+                </div>
+            </main>
+        </div>
+    </t>
+</templates>
