@@ -8,7 +8,7 @@ prayer times (official Umm Al-Qura method), Umm Al-Qura Hijri calendar, Qibla di
 the Holy Quran (King Fahd Glorious Quran Printing Complex text & font) with Tafsir Al-Muyassar,
 and the Forty Hadith of An-Nawawi and Riyad As-Salihin. All data ships inside the module.
     """,
-    "version": "18.0.2.1.0",
+    "version": "19.0.2.1.0",
     "category": "Productivity",
     "author": "Mostafa Ibrahim Salem",
     "website": "",
